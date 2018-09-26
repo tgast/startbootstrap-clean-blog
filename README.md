@@ -63,8 +63,7 @@ disqusShortname = "YourDisqusShortname" #delete or comment to disable Disqus com
 
 The footer contains link icons to any enabled social media sites, such as facebook or linkedin. There is also an email icon, by removing the 'email' parameter or commenting out the icon will be removed.
 
-You can find a [Demo site](http://humboldtux.github.io/sbcb-demo/), and have a look at the source on the
-[repo site](https://github.com/humboldtux/sbcb-demo) for configuration parameters.
+You can have a look at the source on the [repo site](https://github.com/humboldtux/sbcb-demo) for configuration parameters.
 
 ### Customization
 
