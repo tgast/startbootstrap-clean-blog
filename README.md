@@ -65,10 +65,6 @@ The footer contains link icons to any enabled social media sites, such as facebo
 
 You can have a look at the source on the [repo site](https://github.com/humboldtux/sbcb-demo) for configuration parameters.
 
-### Customization
-
-You can have a look at my [personal website](http://www.humboldtux.net), where i customize it and use it in a different way than the original theme.
-
 ## Contributing
 
 Contributions are more than welcome. If you want to contribute and need inspiration, have a look at the following *TODO* section.
