@@ -40,7 +40,9 @@ disqusShortname = "YourDisqusShortname" #delete or comment to disable Disqus com
   email = "benoit.benedetti@gmail.com" #Remove this line if you would prefer not to use an email button in the footer.
   postSummariesFrontPage = 4 #Number of post summaries to show on front page, comment out to allow default(4)
   showReadTime = true #set to false to exclude read time from header of post
-
+  # This will load all the CSS defined in the list
+  customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
+  
 [[params.social]]
   title = "twitter"
   url = "https://twitter.com/humboldtux"
