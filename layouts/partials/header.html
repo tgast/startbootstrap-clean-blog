@@ -23,6 +23,11 @@
 
     <!-- Custom CSS -->
     <link href="{{ .Site.BaseURL }}/css/clean-blog.min.css" rel="stylesheet">
+    {{- range $val := $.Site.Params.customCSS -}}
+	{{- if gt (len $val) 0 -}}
+		<link rel="stylesheet" type="text/css" href="{{ $val }}">
+	{{- end -}}
+    {{- end -}}
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
