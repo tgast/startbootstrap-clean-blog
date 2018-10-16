@@ -1,7 +1,6 @@
 # Warning
 
-**I'm not using this theme anymore.**
-**New maintainer wanted**
+**This theme has been transferred from [humboldtux](https://github.com/humboldtux/), its former owner and initiator, to me. I have various plans for this theme, which I'll carry forward in the near future.**
 
 ## About
 
