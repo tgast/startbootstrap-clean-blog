@@ -58,7 +58,7 @@ disqusShortname = "YourDisqusShortname" #delete or comment to disable Disqus com
   weight = -200
 [[menu.main]]
   name = "Archives"
-  url = "/post/"
+  url = "/posts/"
   weight = -180
 ```
 

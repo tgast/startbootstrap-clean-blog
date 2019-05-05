@@ -556,9 +556,9 @@ Now that we have the home page generating static content, let's add some content
 Hugo has a command to generate a skeleton post, just like it does for sites and themes.
 
 ```bash
-$ hugo --verbose new post/first.md
+$ hugo --verbose new posts/first.md
 INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
-INFO: 2014/09/29 attempting to create  post/first.md of post
+INFO: 2014/09/29 attempting to create  posts/first.md of post
 INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/default.md
 ERROR: 2014/09/29 Unable to Cast <nil> to map[string]interface{}
 
@@ -582,26 +582,26 @@ $ find themes/zafta/archetypes -type f | xargs ls -l
 -rw-r--r--  1 quoha  staff   0 Sep 29 21:53 themes/zafta/archetypes/default.md
 -rw-r--r--  1 quoha  staff  51 Sep 29 21:54 themes/zafta/archetypes/post.md
 
-$ hugo --verbose new post/first.md
+$ hugo --verbose new posts/first.md
 INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
-INFO: 2014/09/29 attempting to create  post/first.md of post
+INFO: 2014/09/29 attempting to create  posts/first.md of post
 INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/post.md
-INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/post/first.md
-/Users/quoha/Sites/zafta/content/post/first.md created
+INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/posts/first.md
+/Users/quoha/Sites/zafta/content/posts/first.md created
 
-$ hugo --verbose new post/second.md
+$ hugo --verbose new posts/second.md
 INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
-INFO: 2014/09/29 attempting to create  post/second.md of post
+INFO: 2014/09/29 attempting to create  posts/second.md of post
 INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/post.md
-INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/post/second.md
-/Users/quoha/Sites/zafta/content/post/second.md created
+INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/posts/second.md
+/Users/quoha/Sites/zafta/content/posts/second.md created
 
-$ ls -l content/post
+$ ls -l content/posts
 total 16
 -rw-r--r--  1 quoha  staff  104 Sep 29 21:54 first.md
 -rw-r--r--  1 quoha  staff  105 Sep 29 21:57 second.md
 
-$ cat content/post/first.md
+$ cat content/posts/first.md
 +++
 Categories = []
 Description = ""
@@ -612,7 +612,7 @@ title = "first"
 +++
 my first post
 
-$ cat content/post/second.md
+$ cat content/posts/second.md
 +++
 Categories = []
 Description = ""
@@ -650,9 +650,9 @@ The output says that it created 2 pages. Those are our new posts:
 ```bash
 $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  78 Sep 29 22:13 public/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/first/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/second/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/posts/first/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/posts/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/posts/second/index.html
 $
 ```
 
@@ -717,9 +717,9 @@ WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
 in 4 ms
 $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  94 Sep 29 22:23 public/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/first/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/index.html
--rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/second/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/posts/first/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/posts/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/posts/second/index.html
 $ cat public/index.html
 <!DOCTYPE html>
 <html>
@@ -740,9 +740,9 @@ And, if that were entirely true, this tutorial would be much shorter. There are 
 
 ## Add Content to the Posts
 
-We're working with posts, which are in the content/post/ directory. That means that their section is "post" (and if we don't do something weird, their type is also "post").
+We're working with posts, which are in the content/posts/ directory. That means that their section is "post" (and if we don't do something weird, their type is also "post").
 
-Hugo uses the section and type to find the template file for every piece of content. Hugo will first look for a template file that matches the section or type name. If it can't find one, then it will look in the _default/ directory. There are some twists that we'll cover when we get to categories and tags, but for now we can assume that Hugo will try post/single.html, then _default/single.html.
+Hugo uses the section and type to find the template file for every piece of content. Hugo will first look for a template file that matches the section or type name. If it can't find one, then it will look in the _default/ directory. There are some twists that we'll cover when we get to categories and tags, but for now we can assume that Hugo will try posts/single.html, then _default/single.html.
 
 Now that we know the search rule, let's see what we actually have available:
 
@@ -751,7 +751,7 @@ $ find themes/zafta -name single.html | xargs ls -l
 -rw-r--r--  1 quoha  staff  132 Sep 29 17:31 themes/zafta/layouts/_default/single.html
 ```
 
-We could create a new template, post/single.html, or change the default. Since we don't know of any other content types, let's start with updating the default.
+We could create a new template, posts/single.html, or change the default. Since we don't know of any other content types, let's start with updating the default.
 
 Remember, any content that we haven't created a template for will end up using this template. That can be good or bad. Bad because I know that we're going to be adding different types of content and we're going to end up undoing some of the changes we've made. It's good because we'll be able to see immediate results. It's also good to start here because we can start to build the basic layout for the site. As we add more content types, we'll refactor this file and move logic around. Hugo makes that fairly painless, so we'll accept the cost and proceed.
 
@@ -795,11 +795,11 @@ in 4 ms
 
 $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff   94 Sep 29 22:40 public/index.html
--rw-r--r--  1 quoha  staff  125 Sep 29 22:40 public/post/first/index.html
--rw-r--r--  1 quoha  staff    0 Sep 29 22:40 public/post/index.html
--rw-r--r--  1 quoha  staff  128 Sep 29 22:40 public/post/second/index.html
+-rw-r--r--  1 quoha  staff  125 Sep 29 22:40 public/posts/first/index.html
+-rw-r--r--  1 quoha  staff    0 Sep 29 22:40 public/posts/index.html
+-rw-r--r--  1 quoha  staff  128 Sep 29 22:40 public/posts/second/index.html
 
-$ cat public/post/first/index.html
+$ cat public/posts/first/index.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -812,7 +812,7 @@ $ cat public/post/first/index.html
 </body>
 </html>
 
-$ cat public/post/second/index.html
+$ cat public/posts/second/index.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -827,7 +827,7 @@ $ cat public/post/second/index.html
 $
 ```
 
-Notice that the posts now have content. You can go to localhost:1313/post/first to verify.
+Notice that the posts now have content. You can go to localhost:1313/posts/first to verify.
 
 ## Linking to Content
 
@@ -864,18 +864,18 @@ in 4 ms
 
 $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  149 Sep 29 22:44 public/index.html
--rw-r--r--  1 quoha  staff  125 Sep 29 22:44 public/post/first/index.html
--rw-r--r--  1 quoha  staff    0 Sep 29 22:44 public/post/index.html
--rw-r--r--  1 quoha  staff  128 Sep 29 22:44 public/post/second/index.html
+-rw-r--r--  1 quoha  staff  125 Sep 29 22:44 public/posts/first/index.html
+-rw-r--r--  1 quoha  staff    0 Sep 29 22:44 public/posts/index.html
+-rw-r--r--  1 quoha  staff  128 Sep 29 22:44 public/posts/second/index.html
 
 $ cat public/index.html
 <!DOCTYPE html>
 <html>
 <body>
 
-    <h1><a href="/post/second/">second</a></h1>
+    <h1><a href="/posts/second/">second</a></h1>
 
-    <h1><a href="/post/first/">first</a></h1>
+    <h1><a href="/posts/first/">first</a></h1>
 
 </body>
 </html>
@@ -885,7 +885,7 @@ $
 
 ## Create a Post Listing
 
-We have the posts displaying on the home page and on their own page. We also have a file public/post/index.html that is empty. Let's make it show a list of all posts (not just the first ten).
+We have the posts displaying on the home page and on their own page. We also have a file public/posts/index.html that is empty. Let's make it show a list of all posts (not just the first ten).
 
 We need to decide which template to update. This will be a listing, so it should be a list template. Let's take a quick look and see which list templates are available.
 
@@ -894,7 +894,7 @@ $ find themes/zafta -name list.html | xargs ls -l
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 ```
 
-As with the single post, we have to decide to update _default/list.html or create post/list.html. We still don't have multiple content types, so let's stay consistent and update the default list template.
+As with the single post, we have to decide to update _default/list.html or create posts/list.html. We still don't have multiple content types, so let's stay consistent and update the default list template.
 
 # Creating Top Level Pages
 
@@ -923,9 +923,9 @@ Generate the web site and verify the results.
 $ find public -name '*.html' | xargs ls -l
 -rw-rw-r--  1 mdhender  staff   334 Sep 27 15:08 public/about-time/index.html
 -rw-rw-r--  1 mdhender  staff   527 Sep 27 15:08 public/index.html
--rw-rw-r--  1 mdhender  staff   358 Sep 27 15:08 public/post/first-post/index.html
--rw-rw-r--  1 mdhender  staff     0 Sep 27 15:08 public/post/index.html
--rw-rw-r--  1 mdhender  staff   342 Sep 27 15:08 public/post/second-post/index.html
+-rw-rw-r--  1 mdhender  staff   358 Sep 27 15:08 public/posts/first-posts/index.html
+-rw-rw-r--  1 mdhender  staff     0 Sep 27 15:08 public/posts/index.html
+-rw-rw-r--  1 mdhender  staff   342 Sep 27 15:08 public/posts/second-posts/index.html
 ```
 
 Notice that the page wasn't created at the top level. It was created in a sub-directory named 'about-time/'. That name came from our slug. Hugo will use the slug to name the generated content. It's a reasonable default, by the way, but we can learn a few things by fighting it for this file.
@@ -937,10 +937,10 @@ $ cat public/index.html
 <!DOCTYPE html>
 <html>
 <body>
-    <h1><a href="http://localhost:1313/post/theme/">creating a new theme</a></h1>
+    <h1><a href="http://localhost:1313/posts/theme/">creating a new theme</a></h1>
     <h1><a href="http://localhost:1313/about-time/">about</a></h1>
-    <h1><a href="http://localhost:1313/post/second-post/">second</a></h1>
-    <h1><a href="http://localhost:1313/post/first-post/">first</a></h1>
+    <h1><a href="http://localhost:1313/posts/second-posts/">second</a></h1>
+    <h1><a href="http://localhost:1313/posts/first-posts/">first</a></h1>
 <script>document.write('<script src="http://'
         + (location.host || 'localhost').split(':')[0]
 		+ ':1313/livereload.js?mindelay=10"></'
@@ -981,9 +981,9 @@ But, that about page still renders to about-time/index.html.
 $ find public -name '*.html' | xargs ls -l
 -rw-rw-r--  1 mdhender  staff    334 Sep 27 15:33 public/about-time/index.html
 -rw-rw-r--  1 mdhender  staff    645 Sep 27 15:33 public/index.html
--rw-rw-r--  1 mdhender  staff    358 Sep 27 15:33 public/post/first-post/index.html
--rw-rw-r--  1 mdhender  staff      0 Sep 27 15:33 public/post/index.html
--rw-rw-r--  1 mdhender  staff    342 Sep 27 15:33 public/post/second-post/index.html
+-rw-rw-r--  1 mdhender  staff    358 Sep 27 15:33 public/posts/first-posts/index.html
+-rw-rw-r--  1 mdhender  staff      0 Sep 27 15:33 public/posts/index.html
+-rw-rw-r--  1 mdhender  staff    342 Sep 27 15:33 public/posts/second-posts/index.html
 ```
 
 Knowing that hugo is using the slug to generate the file name, the simplest solution is to change the slug. Let's do it the hard way and change the permalink in the configuration file.
@@ -1128,7 +1128,7 @@ $ vi themes/zafta/layouts/_default/single.html
 Now we'll update the post's version of the single template. If you remember Hugo's rules, the template engine will use this version over the default.
 
 ```bash
-$ vi themes/zafta/layouts/post/single.html
+$ vi themes/zafta/layouts/posts/single.html
 {{ partial "header.html" . }}
 
   <h1>{{ .Title }}</h1>
